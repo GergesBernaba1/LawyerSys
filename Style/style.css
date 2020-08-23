@@ -1,0 +1,18 @@
+
+
+@font-face {
+    font-family: myFirstFont;
+    src: url("-tPnHq7mmAjcjJRSjsuZGA.ttf");
+}
+
+body {
+    font-family: myFirstFont !important;
+}
+.lab {
+    Font-Size:Large;
+    width:30%;
+}
+.center {
+text-align:center;
+width:50%;
+}
