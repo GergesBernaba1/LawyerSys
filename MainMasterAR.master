@@ -1,0 +1,336 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MainMasterAR.master.cs" Inherits="MainMasterAR" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="rtl">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>System</title>
+
+    <!-- Global stylesheets -->
+
+    <%--    <link href="ContentAR/assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css" />--%>
+    <link href="ContentAR/assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/comp.css" rel="stylesheet" />
+     <link href="Style/style.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="semantic-ui/semantic.min.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript" src="semantic-ui/semantic.min.js"></script>
+    <script src="js/inputvalidations.js"></script>
+    <%--<link href="ContentAR/assets/css/components.css" rel="stylesheet" type="text/css" />--%>
+    <link href="ContentAR/assets/css/core.css" rel="stylesheet" type="text/css" />
+    <link href="ContentAR/assets/css/colors.css" rel="stylesheet" type="text/css" />
+
+    <!-- /global stylesheets -->
+
+    <!-- Core JS files -->
+    <script type="text/javascript" src="ContentAR/assets/js/plugins/loaders/pace.min.js"></script>
+    <script type="text/javascript" src="ContentAR/assets/js/core/libraries/jquery.min.js"></script>
+    <script type="text/javascript" src="ContentAR/assets/js/core/libraries/bootstrap.min.js"></script>
+    <script type="text/javascript" src="ContentAR/assets/js/plugins/loaders/blockui.min.js"></script>
+    <!-- /core JS files -->
+
+    <!-- Theme JS files -->
+    <script type="text/javascript" src="ContentAR/assets/js/plugins/visualization/d3/d3.min.js"></script>
+    <script type="text/javascript" src="ContentAR/assets/js/plugins/visualization/d3/d3_tooltip.js"></script>
+    <script type="text/javascript" src="ContentAR/assets/js/plugins/forms/styling/switchery.min.js"></script>
+    <script type="text/javascript" src="ContentAR/assets/js/plugins/forms/styling/uniform.min.js"></script>
+    <script type="text/javascript" src="ContentAR/assets/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
+    <script type="text/javascript" src="ContentAR/assets/js/plugins/ui/moment/moment.min.js"></script>
+    <script type="text/javascript" src="ContentAR/assets/js/plugins/pickers/daterangepicker.js"></script>
+
+    <script type="text/javascript" src="ContentAR/assets/js/core/app.js"></script>
+    <script type="text/javascript" src="ContentAR/assets/js/pages/dashboard.js"></script>
+    <!-- /theme JS files -->
+
+</head>
+
+<body class="pace-done sidebar-xs" style="font-family:myFirstFont;background-color:cornsilk;background-image:url(Doctor.png);background-repeat:repeat-y;background-size:cover" ">
+    <form id="form1" runat="server">
+        <div>
+            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+            <!-- Main navbar -->
+            <div class="navbar navbar-inverse" style="background-color:rgb(101, 101, 107)">
+                <div class="navbar-header" style="min-width:150px">
+                    <a class="navbar-brand" href="MainPageEmployee.aspx">
+                        <img src="ContentAR/assets/images/Logo.png" style="width:185px;height:45px;margin-top:-12px" alt="" /></a>
+
+                    <%--<ul class="nav navbar-nav visible-xs-block">
+                        <li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="glyphicon glyphicon-circle-arrow-down"></i></a></li>
+                        <li><a class="sidebar-mobile-main-toggle"><i class="glyphicon glyphicon-align-justify"></i></a></li>
+                    </ul>--%>
+                </div>
+
+                <div class="navbar-collapse collapse" id="navbar-mobile">
+                   <%-- <ul class="nav navbar-nav">
+                        <li><a class="sidebar-control sidebar-main-toggle hidden-xs"><i class="glyphicon glyphicon-align-justify"></i></a></li>
+                    </ul>--%>
+              
+                    <ul class="nav navbar-nav navbar-right" style="min-width:50px">
+                          <li class="dropdown dropdown-user">
+                            <a class="dropdown-toggle" data-toggle="">
+                                <li><a href="MainPage.aspx"><i ></i>الرئيسية</a></li>
+                                <i class="glyphicon glyphicon"></i>
+                            </a>
+                        </li>
+                         <li class="dropdown dropdown-user">
+                            <a class="dropdown-toggle" data-toggle="dropdown">
+                                <span>بطاقات</span>
+                                <i class="glyphicon glyphicon-menu-down"></i>
+                            </a>
+
+                            <ul class="dropdown-menu dropdown-menu-right" style="min-width:200px;right: 0;left: auto">
+                                <li><a href="Add-Employee.aspx"><i class="glyphicon glyphicon"></i>بطاقة عميل</a></li>
+                                <li><a href="Add-Issue.aspx"><i class="glyphicon glyphicon"></i>بطاقة قضية</a></li>
+                                <li><a href="Add_MoveIssue.aspx"><i class="glyphicon glyphicon"></i>بطاقة نقل قضية</a></li>
+                                <li><a href="Add_Consultation.aspx"><i class="glyphicon glyphicon"></i>بطاقة إستشارة</a></li>
+                                <li><a href="Add_Sitting.aspx"><i class="glyphicon glyphicon"></i>بطاقة جلسة</a></li>
+                                <li><a href="Add_Task.aspx"><i class="glyphicon glyphicon"></i>بطاقة مهام إدارية</a></li>
+                                <li><a href="Add_LegalDocument.aspx"><i class="glyphicon glyphicon"></i>وثائق عدلية</a></li>
+                                <%--<li><a href=".aspx"><i class="glyphicon glyphicon"></i>وثائق عامة</a></li>--%>
+                            </ul>
+                        </li>
+                        <li class="dropdown dropdown-user">
+                            <a class="dropdown-toggle" data-toggle="dropdown">
+                                <span>سندات</span>
+                                <i class="glyphicon glyphicon-menu-down"></i>
+                            </a>
+
+                            <ul class="dropdown-menu dropdown-menu-right" style="min-width:230px;right: 0;left: auto">
+                                <li><a href="Add_PayMoney.aspx"><i class="glyphicon glyphicon"></i>سند دفع</a></li>
+                                <li><a href="Add_ReceiveMoney.aspx"><i class="glyphicon glyphicon"></i>سند قبض</a></li>
+                                <li><a href="Select_PayMoney.aspx"><i class="glyphicon glyphicon"></i>كشف حساب</a></li>
+                                <li><a href="BalanceEmployeeData.aspx"><i class="glyphicon glyphicon"></i>ارصدة العملاء</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown dropdown-user">
+                            <a class="dropdown-toggle" data-toggle="dropdown">
+                                <span>بحث وتقارير</span>
+                                <i class="glyphicon glyphicon-menu-down"></i>
+                            </a>
+
+                            <ul class="dropdown-menu dropdown-menu-right" style="min-width:230px;right: 0;left: auto">
+                                                <li><a href="Select-Employee.aspx"><i class="glyphicon glyphicon"></i>عرض العملاء</a></li>
+                                                <li><a href="Select_Issue.aspx"><i class="glyphicon glyphicon"></i>عرض القضايا</a></li>
+                                                <li><a href="Select_MoveIssue.aspx"><i class="glyphicon glyphicon"></i>عرض نقل القضايا</a></li>
+                                <li><a href="Select_Consultation.aspx"><i class="glyphicon glyphicon"></i>عرض بطاقات الاستشارة</a></li>
+                                                <li><a href="Select_Sitting.aspx"><i class="glyphicon glyphicon"></i>عرض الجلسات</a></li>
+                                                <li><a href="Select_Task.aspx"><i class="glyphicon glyphicon"></i>عرض المهام الادارية</a></li>
+                                <li><a href="Select_LegalDocument.aspx"><i class="glyphicon glyphicon"></i>عرض الوثائق العدلية</a></li>
+                                <%--<li><a href=".aspx"><i class="glyphicon glyphicon"></i>عرض الوثائق العامة</a></li>--%>
+                            </ul>
+                        </li>
+                        <li class="dropdown dropdown-user">
+                            <a class="dropdown-toggle" data-toggle="dropdown">
+                                <span>الارشيف</span>
+                                <i class="glyphicon glyphicon-menu-down"></i>
+                            </a>
+
+                            <ul class="dropdown-menu dropdown-menu-right" style="min-width:180px;right: 0;left: auto">
+                                <li><a href="Select_IssueOld.aspx"><i class="glyphicon glyphicon"></i>القضايا المؤرشفة</a></li>
+                                <li><a href="Select_SittingOld.aspx"><i class="glyphicon glyphicon"></i>الجلسات </a></li>
+                                 <li><a href="Select_OldTask.aspx"><i class="glyphicon glyphicon"></i>المهمات الادارية </a></li>
+                            </ul>
+                        </li>
+                          <li class="dropdown dropdown-user">
+                            <a class="dropdown-toggle" data-toggle="dropdown">
+                                <span>أخري</span>
+                                <i class="glyphicon glyphicon-menu-down"></i>
+                            </a>
+
+                            <ul class="dropdown-menu dropdown-menu-right" style="min-width:180px">
+                                 <li><a href="Add-User.aspx"><i class="glyphicon glyphicon"></i>أضافة مستخدم</a></li>
+                                 <li><a href="Select-User.aspx"><i class="glyphicon glyphicon"></i>عرض المستخدمين</a></li>
+                                 <li><a href="Add-Governate.aspx"><i class="glyphicon glyphicon"></i>أضافة محافظة</a></li>
+                                                        <li><a href="Add-PlaceLawer.aspx"><i class="glyphicon glyphicon"></i>أضافة محكمة</a></li>
+                                <li><a href="Select-PlaceLawer.aspx"><i class="glyphicon glyphicon"></i>المحاكم</a></li>
+                                <li><a href="Default.aspx"><i class="glyphicon glyphicon"></i>خروج</a></li>
+                                
+                            </ul>
+                        </li>     
+                         <li class="dropdown dropdown-user" runat="server" id="div" visible="false">
+                            <a class="dropdown-toggle" data-toggle="">
+                                <li><a href="Alert.aspx"><i ></i>التنبيهات</a></li>
+                                <i class="glyphicon glyphicon"></i>
+                            </a>
+                        </li>
+                       <%-- <li class="dropdown dropdown-user">
+                            <a class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="ContentAR/assets/images/placeholder.jpg" alt="" />
+                                <span>Admin</span>
+                                <i class="glyphicon glyphicon-menu-down"></i>
+                            </a>
+
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li><a href="#"><i class="glyphicon glyphicon-user"></i>My profile</a></li>
+
+                                <li><a href="#"><i class="glyphicon glyphicon-log-out"></i>Logout</a></li>
+                            </ul>
+                        </li>--%>
+                        
+                    </ul>
+                </div>
+            </div>
+            <!-- /main navbar -->
+
+
+            <!-- Page container -->
+            <div class="page-container">
+
+                <!-- Page content -->
+                <div class="page-content">
+
+                    <!-- Main sidebar -->
+                    <div class="sidebar sidebar-main" style="background-color:rgb(101, 101, 107)">
+                        <div class="sidebar-content">
+
+                            <!-- Main navigation -->
+                           <%-- <div class="sidebar-category sidebar-category-visible">
+                                <div class="category-content no-padding">
+                                    <ul class="navigation navigation-main navigation-accordion">
+
+                                        <!-- Main -->
+                                        <li class="navigation-header"><span>الرئيسية</span> <i class="icon-menu" title="Main pages"></i></li>
+                                        <li class="active"><a href="MainPageEmployee.aspx"><i class="glyphicon glyphicon-home"></i><span>الصفحة الرئيسية</span></a></li>
+                                          <li>
+                                            <a href="#"><i class="glyphicon glyphicon-file"></i>
+                                                <span>ملف</span>
+                                                <span class="glyphicon glyphicon-menu-left left arrow-lef" aria-hidden="true"></span>
+                                            </a>
+                                            <ul>
+                                                
+                                                <li><a href="Add-VacaDays.aspx">ايام الاجازات</a></li>
+                                <li class="navigation-divider"></li>
+                                <li><a href="Add-Jobs.aspx"><i class="glyphicon glyphicon"></i>الوظائف</a></li>
+                                                <li class="navigation-divider"></li>
+                                <li><a href="Add-Medecin.aspx">الادوية</a></li>
+                                                <li class="navigation-divider"></li>
+                                <li><a href="Add-DetailsOutClinic.aspx">انواع داخل العيادات</a></li>
+                                                <li class="navigation-divider"></li>
+                                <li><a href=".aspx">خروج</a></li>
+
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="glyphicon glyphicon-briefcase"></i>
+                                                <span>العيادات</span>
+                                                <span class="glyphicon glyphicon-menu-left left arrow-lef" aria-hidden="true"></span>
+                                            </a>
+                                            <ul>
+                                                
+                                                  <li><a href="Add-OutPatientClinic.aspx">أضافة عيادة جديدة</a></li>
+                                                <li class="navigation-divider"></li>
+                                <li><a href="Select-OutPatientClinic.aspx">مراجعة العيادات الخارجية</a></li>
+                                                <li class="navigation-divider"></li>
+                                <li><a href="Report-OutPatientClinic.aspx">تقارير العيادات</a></li>
+                                                <li class="navigation-divider"></li>
+                                <li><a href="Add-InsuranceCompanies.aspx">أضافة شركة تأمين</a></li>
+                                                <li class="navigation-divider"></li>
+                                <li><a href="Select-InsuranceCompanies.aspx">مراجعة شركات التأمين</a></li>
+                                                <li class="navigation-divider"></li>
+                                <li><a href="Report-InsuranceCompanies.aspx">تقارير شركات التأمين</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="glyphicon glyphicon-user"></i>
+                                                <span>الاشخاص</span>
+                                                <span class="glyphicon glyphicon-menu-left left arrow-lef" aria-hidden="true"></span>
+                                            </a>
+                                            <ul>
+
+                                                  <li><a href="Add-Doctor.aspx"><i class="glyphicon glyphicon"></i>اضافة دكتور</a></li>
+                                                <li class="navigation-divider"></li>
+                                                <li><a href="Select-Doctor.aspx"><i class="glyphicon glyphicon"></i>مراجعة الدكاترة</a></li>
+                                                <li class="navigation-divider"></li>
+                                                <li><a href="Report-Doctor.aspx"><i class="glyphicon glyphicon"></i>تقرير الدكاترة</a></li>
+                                                <li class="navigation-divider"></li>
+                                                 <li><a href="Add-Employee.aspx"><i class="glyphicon glyphicon"></i>اضافة موظف</a></li>
+                                                <li class="navigation-divider"></li>
+                                                <li><a href="Select-Employee.aspx"><i class="glyphicon glyphicon"></i>مراجعة الموظفين</a></li>
+                                                <li class="navigation-divider"></li>
+                                                <li><a href="Report-Employee.aspx"><i class="glyphicon glyphicon"></i>تقرير الموظفين</a></li>
+                                                <li class="navigation-divider"></li>
+                                                <li><a href="Add-Patient.aspx"><i class="glyphicon glyphicon"></i>اضافة مريض</a></li>
+                                                <li class="navigation-divider"></li>
+                                                <li><a href="Select-Patient.aspx"><i class="glyphicon glyphicon"></i>مراجعة المرضي</a></li>
+                                                <li class="navigation-divider"></li>
+                                                <li><a href="MainPatientReport.aspx"><i class="glyphicon glyphicon"></i>تقرير المرضي</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="glyphicon glyphicon-envelope"></i>
+                                                <span>الحجوزات</span>
+                                                <span class="glyphicon glyphicon-menu-left left arrow-lef" aria-hidden="true"></span>
+                                            </a>
+                                            <ul>
+
+                                                <li><a href="Booking.aspx"><i class="glyphicon glyphicon"></i>اضافة حجز جديد</a></li>
+                                                <li class="navigation-divider"></li>
+                                <li><a href="Select-Booking.aspx"><i class="glyphicon glyphicon"></i>مراجعة الحجوزات </a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="glyphicon glyphicon-list-alt"></i>
+                                                <span>الكشوفات</span>
+                                                <span class="glyphicon glyphicon-menu-left left arrow-lef" aria-hidden="true"></span>
+                                            </a>
+                                            <ul>
+
+                                                 <li><a href="Add-Reveal.aspx"><i class="glyphicon glyphicon"></i>أضافة كشف جديد</a></li>
+                                                <li class="navigation-divider"></li>
+                                                        <li><a href="Select-Reveal.aspx"><i class="glyphicon glyphicon"></i>مراجعة الكشوفات</a></li>
+                                                                                          
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class=" glyphicon glyphicon-usd"></i>
+                                                <span>القبض والصرف</span>
+                                                <span class="glyphicon glyphicon-menu-left left arrow-lef" aria-hidden="true"></span>
+                                            </a>
+                                            <ul>
+
+                                                <li><a href="Add-Expenses.aspx"><i class="glyphicon glyphicon"></i>أضافة مصروفات</a></li>
+                                                        <li><a href="Select-Expenses.aspx"><i class="glyphicon glyphicon"></i>مراجعة المصروفات</a></li>
+                                                <li><a href="Report-Expense.aspx"><i class="glyphicon glyphicon"></i>تقرير المصروفات</a></li>
+                                <li class="navigation-divider"></li>
+                                <li><a href="Add-Revenues.aspx"><i class="glyphicon glyphicon"></i>أضافة إيرادات</a></li>
+                                                <li><a href="Add-RevenuesPepole.aspx"><i class="glyphicon glyphicon"></i>إيرادات المرضي والشركات</a></li>
+                                                        <li><a href="Select-Revenues.aspx"><i class="glyphicon glyphicon"></i>مراجعة الايرادات</a></li>
+                                                <li><a href="Report-Revenues.aspx"><i class="glyphicon glyphicon"></i>تقرير الايرادات</a></li>
+                                                                                          
+                                            </ul>
+                                        </li>
+                                         <li>
+                                            
+                                        </li>
+
+                                        <!-- /page kits -->
+
+                                    </ul>
+                                </div>
+                            </div>--%>
+                            <!-- /main navigation -->
+
+                        </div>
+                    </div>
+                    <!-- /main sidebar -->
+
+
+                    <!-- Main content -->
+                    <div class="content-wrapper">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                    <!-- /main content -->
+
+                </div>
+                <!-- /page content -->
+
+            </div>
+            <!-- /page container -->
+        </div>
+    </form>
+</body>
+</html>
