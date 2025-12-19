@@ -1,5 +1,7 @@
 # LawyerSys
 
+New version : https://github.com/GergesBernaba1/LawyerSys-v2
+
 Introduction: 
 Perhaps there are many problems facing some specialized offices in the legal profession, which is the loss of some papers related to the case, which leads to a defect and calls on clients to extract the papers again and go to the office again, and with how many cases and research it has become somewhat difficult.
 Therefore, it is better to use technology in complete management, and this will facilitate procedures, communication with customers, and customer follow-up of his case more flexibly.
